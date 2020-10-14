@@ -12,11 +12,8 @@ formm = """
 	<input type = "submit" value="send">
 </form>
 """
+
 @bot.route('/whatsapp', methods = ['GET', 'POST'])
-
-
-
-
 def homePage():
 	msg = request.form.get('body')
 	
@@ -27,5 +24,5 @@ def homePage():
 
 	return str(msg)
 
-
-bot.run()
+if __name__ == "__main__": 
+	bot.run()
