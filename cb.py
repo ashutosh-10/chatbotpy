@@ -28,8 +28,7 @@ def homePage():
 		return resp
 
 	
-@bot.route('/whatsapp', methods = ['POST'])
-
+@bot.route('/whatsapp/', methods = ['POST'])
 def whatsapp():
 	msg = request.form.get('body').strip()
 
@@ -37,7 +36,7 @@ def whatsapp():
 		resp = predict(msg)
 	else:
 		resp = "Invalid input"
-	msg MessagingResponse()
+	msg =  MessagingResponse()
 	msg.message(resp)
 	return msg
 if __name__ == "__main__": 
