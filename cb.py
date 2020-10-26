@@ -17,7 +17,7 @@ formm = """
 
 
 
-@bot.route('', methods = ['POST'])
+@bot.route('/', methods = ['POST'])
 def homePage():
 	msg = request.form.get('body')
 	
@@ -30,10 +30,10 @@ def homePage():
 	
 @bot.route('/whatsapp/', methods = ['POST'])
 def whatsapp():
-	msg = request.form.get('body').strip()
+	msg = request.form.get('body')
 
 	if msg not in [None,'']:
-		resp = predict(msg)
+		resp = predict(msg.strip())
 	else:
 		resp = "Invalid input"
 	msg =  MessagingResponse()
