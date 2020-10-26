@@ -1,7 +1,7 @@
 from flask import Flask, request
 bot = Flask(__name__)
 
-
+from pred import predict
 
 
 
@@ -20,9 +20,10 @@ def homePage():
 	if msg == None:
 		return formm
 	else:
-		return f"the message you entered is {msg}"
+		resp = predict(msg)
+		return resp
 
 	return str(msg)
 
 if __name__ == "__main__": 
-	bot.run()
+	bot.run(debug = True)
