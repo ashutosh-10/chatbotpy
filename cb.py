@@ -13,7 +13,7 @@ formm = """
 	<input type = "submit" value="send">
 </form>
 """
-@bot.route('',methods = ['GET', 'POST'])
+
 
 
 
